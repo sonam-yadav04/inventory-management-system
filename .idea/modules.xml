@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://D:/sonam/LOGIN_FORM/flask-backend/.idea/flask-backend.iml" filepath="D:/sonam/LOGIN_FORM/flask-backend/.idea/flask-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/inventory_management.iml" filepath="$PROJECT_DIR$/.idea/inventory_management.iml" />
+      <module fileurl="file://D:/sonam/LOGIN_FORM/my-form/.idea/my-form.iml" filepath="D:/sonam/LOGIN_FORM/my-form/.idea/my-form.iml" />
+      <module fileurl="file://D:/sonam/LOGIN_FORM/node_modules/.idea/node_modules.iml" filepath="D:/sonam/LOGIN_FORM/node_modules/.idea/node_modules.iml" />
+    </modules>
+  </component>
+</project>
