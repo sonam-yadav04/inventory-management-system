@@ -1,0 +1,57 @@
+# created by virtualenv automatically
+# Python cache files
+__pycache__/
+*.pyc
+
+# Node.js dependencies
+node_modules/
+
+# Logs
+*.log
+
+# Shortcuts
+*.lnk
+
+# Python virtual environments
+venv/
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.log
+
+# Environment
+.env
+.venv/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Flask-related
+instance/
+*.db
+*.sqlite3
+
+# React / Node.js
+node_modules/
+build/
+dist/
+npm-debug.log
+yarn-error.log
+
+# System
+.DS_Store
+Thumbs.db
+
+# Shortcut files
+*.lnk
+
+# PyInstaller
+*.spec
+
+# Logs
+*.log
+logs/
