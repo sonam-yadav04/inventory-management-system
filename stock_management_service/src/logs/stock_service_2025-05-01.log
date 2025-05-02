@@ -1,0 +1,60 @@
+2025-05-01 01:02:04,784 [INFO] stock_service: Fetching stock for product_id 1
+2025-05-01 01:02:07,916 [INFO] stock_service: Fetching stock for product_id 1
+2025-05-01 01:05:02,674 [INFO] stock_service: Fetching all stock
+2025-05-01 01:05:45,199 [INFO] stock_service: Adding or updating stock
+2025-05-01 01:06:37,783 [INFO] stock_service: Fetching all stock
+2025-05-01 01:06:39,317 [INFO] stock_service: Fetching all stock
+2025-05-01 01:06:41,031 [INFO] stock_service: Fetching all stock
+2025-05-01 01:06:41,255 [INFO] stock_service: Fetching all stock
+2025-05-01 01:06:41,913 [INFO] stock_service: Fetching all stock
+2025-05-01 01:06:42,125 [INFO] stock_service: Fetching all stock
+2025-05-01 01:06:45,993 [INFO] stock_service: Fetching all stock
+2025-05-01 01:07:37,790 [INFO] stock_service: Fetching stock for product_id 2
+2025-05-01 01:07:58,926 [INFO] stock_service: Adding or updating stock
+2025-05-01 01:08:13,740 [INFO] stock_service: Fetching stock for product_id 2
+2025-05-01 01:08:15,185 [INFO] stock_service: Fetching stock for product_id 2
+2025-05-01 01:08:16,244 [INFO] stock_service: Fetching stock for product_id 2
+2025-05-01 01:08:16,418 [INFO] stock_service: Fetching stock for product_id 2
+2025-05-01 01:08:16,624 [INFO] stock_service: Fetching stock for product_id 2
+2025-05-01 01:08:16,831 [INFO] stock_service: Fetching stock for product_id 2
+2025-05-01 01:08:17,433 [INFO] stock_service: Fetching stock for product_id 2
+2025-05-01 01:08:19,717 [INFO] stock_service: Fetching stock for product_id 2
+2025-05-01 01:08:28,052 [INFO] stock_service: Fetching stock for product_id 2
+2025-05-01 01:08:30,846 [INFO] stock_service: Fetching stock for product_id 2
+2025-05-01 14:10:32,143 [INFO] stock_service: Adding or updating stock
+2025-05-01 14:10:43,268 [INFO] stock_service: Fetching all stock
+2025-05-01 14:10:46,101 [INFO] stock_service: Fetching all stock
+2025-05-01 14:12:09,052 [INFO] stock_service: Adding or updating stock
+2025-05-01 14:13:27,024 [INFO] stock_service: Adding or updating stock
+2025-05-01 14:15:57,872 [INFO] stock_service: Adding or updating stock
+2025-05-01 14:23:10,449 [INFO] stock_service: Adding or updating stock
+2025-05-01 14:23:19,780 [INFO] stock_service: Adding or updating stock
+2025-05-01 14:42:43,265 [INFO] stock_service: Adding or updating stock
+2025-05-01 14:42:52,272 [INFO] stock_service: Adding or updating stock
+2025-05-01 14:43:55,047 [INFO] stock_service: Adding or updating stock
+2025-05-01 14:44:19,637 [INFO] stock_service: Adding or updating stock
+2025-05-01 14:45:50,627 [INFO] stock_service: Adding or updating stock
+2025-05-01 14:46:27,520 [INFO] stock_service: Adding or updating stock
+2025-05-01 14:46:57,040 [INFO] stock_service: Adding or updating stock
+2025-05-01 14:54:42,342 [INFO] stock_service: Adding or updating stock
+2025-05-01 14:55:35,904 [INFO] stock_service: Adding or updating stock
+2025-05-01 14:56:11,574 [INFO] stock_service: Adding or updating stock
+2025-05-01 14:56:49,602 [INFO] stock_service: Adding or updating stock
+2025-05-02 00:09:55,107 [INFO] stock_service: Adding or updating stock
+2025-05-02 00:10:51,659 [INFO] stock_service: Fetching all stock
+2025-05-02 00:10:54,203 [INFO] stock_service: Fetching all stock
+2025-05-02 00:10:55,626 [INFO] stock_service: Fetching all stock
+2025-05-02 00:14:33,935 [INFO] stock_service: Fetching all stock
+2025-05-02 00:16:04,418 [INFO] stock_service: Fetching all stock
+2025-05-02 00:16:07,848 [INFO] stock_service: Fetching all stock
+2025-05-02 00:16:36,553 [INFO] stock_service: Fetching all stock
+2025-05-02 00:17:55,414 [INFO] stock_service: Fetching all stock
+2025-05-02 00:18:02,748 [INFO] stock_service: Fetching all stock
+2025-05-02 00:22:04,897 [INFO] stock_service: Fetching all stock
+2025-05-02 00:24:03,420 [INFO] stock_service: Fetching all stock
+2025-05-02 00:24:05,729 [INFO] stock_service: Fetching all stock
+2025-05-02 00:24:07,049 [INFO] stock_service: Fetching all stock
+2025-05-02 00:26:07,420 [INFO] stock_service: Fetching all stock
+2025-05-02 00:26:17,237 [INFO] stock_service: Fetching all stock
+2025-05-02 00:26:57,423 [INFO] stock_service: Fetching all stock
+2025-05-02 00:27:12,776 [INFO] stock_service: Fetching all stock
