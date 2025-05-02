@@ -1,16 +1,39 @@
-from flask_mysqldb import *
+import jwt
+import datetime
+from flask import request, jsonify
+from functools import wraps
 
-def create_product(mysql, name, description, price, quantity):
-    cur = mysql.connection.cursor()
-    cur.execute(
-        "INSERT INTO products (name, description, price, quantity) VALUES (%s, %s, %s, %s)",
-        (name, description, price, quantity)
-    )
-    mysql.connection.commit()
-    return cur.lastrowid
+SECRET_KEY = "your-secret-key"
 
-def get_all_products(mysql):
-    cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM products")
-    products = cur.fetchall()
-    return products
+def generate_token(email, role):
+    payload = {
+        "email": email,
+        "role": role,
+        "exp": datetime.datetime.utcnow() + datetime.timedelta(hours=2)
+    }
+    return jwt.encode(payload, SECRET_KEY, algorithm="HS256")
+
+def verify_token(token):
+    try:
+        return jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
+    except jwt.ExpiredSignatureError:
+        return "Token expired"
+    except jwt.InvalidTokenError:
+        return "Invalid token"
+
+def token_required(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        token = None
+        if 'Authorization' in request.headers:
+            token = request.headers['Authorization'].split(" ")[1]
+        if not token:
+            return jsonify({'message': 'Token is missing!'}), 401
+
+        decoded = verify_token(token)
+        if isinstance(decoded, str):
+            return jsonify({'message': decoded}), 401
+
+        return f(decoded['email'], *args, **kwargs)
+    return decorated
+

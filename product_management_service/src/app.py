@@ -10,7 +10,7 @@ CORS(app)
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'Sonam123'
-app.config['MYSQL_DB'] = 'product_management'
+app.config['MYSQL_DB'] = 'inventory_db'
 
 mysql = init_mysql(app)
 
