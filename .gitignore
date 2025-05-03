@@ -1,2 +1,28 @@
 .DS_Store
+*.exe
+# Ignore virtual environments
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# IDEs
+.idea/
+
+# Node modules & build
+node_modules/
+build/
+dist/
+
+# Logs & system files
+*.log
+
+Thumbs.db
+
+# Environment files
+.env*
 
