@@ -1,0 +1,12 @@
+﻿**/__pycache__
+**/*.pyc
+**/*.pyo
+**/.git
+**/.idea
+**/venv
+**/node_modules
+**/build
+**/.env
+**/logs
+**/*.log
+backend/venv
