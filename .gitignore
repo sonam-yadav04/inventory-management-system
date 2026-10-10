@@ -1,8 +1,7 @@
-.DS_Store
-*.exe
-# Ignore virtual environments
+﻿# Virtual environments
 .venv/
 venv/
+backend/venv/
 
 # Python cache
 __pycache__/
@@ -12,17 +11,28 @@ __pycache__/
 
 # IDEs
 .idea/
+.vscode/
 
 # Node modules & build
 node_modules/
 build/
 dist/
+frontend/node_modules/
 
-# Logs & system files
+# Logs
 *.log
+**/logs/
 
+# Environment files — NEVER commit these!
+.env
+.env.*
+!.env.example
+
+# OS files
+.DS_Store
 Thumbs.db
 
-# Environment files
-.env*
+# Misc
+qodana.yaml
 
+*.exe
