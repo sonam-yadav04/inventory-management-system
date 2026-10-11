@@ -11,10 +11,7 @@ CORS(app)
 # Initialize MySQL and Logger
 init_mysql(app)
 logger = get_logger("order_service")
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Sonam123'
-app.config['MYSQL_DB'] = 'inventory_db'
+
 
 @app.route("/orders", methods=["POST"])
 def create_order():
