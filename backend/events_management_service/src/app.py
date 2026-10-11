@@ -1,74 +1,41 @@
 import os
-import pymysql
 from dotenv import load_dotenv
-from flask import *
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+from flask_socketio import SocketIO
 
 load_dotenv()
 
-DB_CONFIG = {
-    "host": os.getenv("DB_HOST", "localhost"),
-    "user": os.getenv("DB_USER", "root"),
-    "password": os.getenv("DB_PASSWORD", ""),
-    "database": os.getenv("DB_NAME", "inventorydb"),
-}
-
-def get_connection():
-    return pymysql.connect(
-        host=DB_CONFIG["host"],
-        user=DB_CONFIG["user"],
-        password=DB_CONFIG["password"],
-        database=DB_CONFIG["database"],
-        cursorclass=pymysql.cursors.DictCursor
-    )
-
-def initialize_database():
-    conn = get_connection()
-    with conn.cursor() as cursor:
-        cursor.execute("CREATE DATABASE IF NOT EXISTS inventory_db")
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS products (
-                id INT AUTO_INCREMENT PRIMARY KEY,
-                name VARCHAR(255) NOT NULL,
-                price DECIMAL(10,2) NOT NULL,
-                stock INT NOT NULL
-            )
-        """)
-    conn.commit()
-    conn.close()
-
-class Product:
-    @staticmethod
-    def get_all():
-        conn = get_connection()
-        with conn.cursor() as cursor:
-            cursor.execute("SELECT * FROM products")
-            products = cursor.fetchall()
-        conn.close()
-        return products
-
-    @staticmethod
-    def add_product(name, price, stock):
-        conn = get_connection()
-        with conn.cursor() as cursor:
-            cursor.execute("INSERT INTO products (p_name, price, stock) VALUES (%s, %s, %s)",
-                           (name, price, stock))
-        conn.commit()
-        conn.close()
-
 app = Flask(__name__)
+CORS(app)
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode="threading")
 
 
-initialize_database()
-@app.route('/')
-@app.route("/products", methods=["GET"])
-def get_products():
-    return jsonify(Product.get_all())
-@app.route('/')
-@app.route("/products", methods=["POST"])
-def add_product():
-    data = request.json
-    Product.add_product(data["p_name"], data["price"], data["stock"])
-    return jsonify({"message": "Product added successfully"})
+@app.route("/")
+def index():
+    return "Events Management Service is running"
+
+
+@app.route("/events", methods=["POST"])
+def publish_event():
+    """Other services POST an event here; it is pushed to every connected browser."""
+    event = request.get_json()
+    if not event or "type" not in event:
+        return jsonify({"message": "Event 'type' is required"}), 400
+    socketio.emit("inventory_event", event)
+    return jsonify({"message": "Event broadcast"}), 202
+
+
+@socketio.on("connect")
+def on_connect():
+    print("Client connected")
+
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    socketio.run(
+        app,
+        host="0.0.0.0",
+        port=5005,
+        debug=os.getenv("FLASK_DEBUG", "0") == "1",
+        allow_unsafe_werkzeug=True,
+    )
